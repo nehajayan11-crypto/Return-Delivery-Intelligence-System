@@ -30,3 +30,18 @@ This is highly business-relevant because:
 1. Product returns directly affect logistics costs
 2. Helps reduce reverse logistics inefficiencies
 3. Matches your logistics and returns analysis experience perfectly
+
+However from analysing the model accuracy report/classification report I found that the models are giving 100% accuracy in its prediction which seems high unlikely towards any data. To understand further i checked if there is any one feature who is dominating every other feature in its prediction also if there is any one feature whose correlation is near to 1.0. Upon testing this theory i found that is_returned feature is more domineering towards other features with correlation 1.0 that means that its a major red-flag when it comes to machine learning modelling
+It usually indicates:
+
+1. Data Leakage
+
+Meaning:
+
+The model is indirectly “seeing the answer” before prediction.
+
+2. Correlation close to +1 means:
+As the feature increases,
+the target variable also increases almost perfectly.
+
+This is extremely unusual in real-world business data.
